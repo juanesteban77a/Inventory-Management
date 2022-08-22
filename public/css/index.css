@@ -1,0 +1,438 @@
+*{
+    margin: 0;
+    padding: 0;
+    }
+    
+    
+    .nav-barra { 
+      height: 100px;
+      width: 100%;
+      background-color: black;
+  
+    }
+    .enlace a{
+      display: flex;
+      justify-content: end;
+      margin-right: 30px;
+      color:#0C75F3 ;
+      font-size: 25px;
+      text-decoration: none;
+      align-items: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .nav-barra .img{
+      height: 40px;
+      width: 140px;
+    
+    }
+    
+    .barra a{
+      display:inline;
+      width: 10px;
+      flex-wrap: wrap;
+      text-decoration: none;
+      font-size: 20px;
+      margin-left: 10px;
+      color: white;
+    }
+    
+    .barra{
+      width: 90%;
+      display:flex;
+      justify-content: end;
+      align-items: center;
+      
+    }
+    
+    a:hover{
+      color: #0C75F3;
+    }
+    
+    .container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      height: 80vh;
+      background-image: linear-gradient(
+          0deg,
+          rgba(0,0,0,0.5),
+          rgba(0,0,0,0.5)
+      )
+      ,url("/img/portada.png");
+     
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .botones{
+      width: 500px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 700px;
+    
+      
+    }
+    
+    .botones a{
+     width: 250px;
+     height: 110px;
+     border-radius: 40px;
+    margin-left: 20PX;
+    background-color: #0C75F3;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      
+    }
+    .botones a{
+      text-decoration: none;
+      color: black;
+       
+     }
+    
+    .botones a:hover{
+      background-color: rgb(255, 255, 255);
+      transform: scale(0.9);
+      box-shadow: 0px 0px 10px 7px #0C75F3;
+     
+    }
+    #caracteristicas .container1{
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      background-color:rgb(230,230,230);
+    }
+    #Contenedor{
+    justify-content:center;
+    width: 400px;
+    margin: 0px 10px;
+    background:linear-gradient(160deg,rgb(0, 0, 0),#0073ff);
+    border-top: 10px solid #ffffff;
+    height: 480px;
+    border-radius: 20px;
+    padding: 0px 9px 0px 9px;
+      color: white;
+      font-size: 25px;
+      margin-left: 550PX;
+    }
+    .botons{
+      height:50px;
+      margin: 0;
+      line-height: inherit;
+      font-size:20px;
+    
+      margin-top:70px;    
+    }
+    #Contenedor h4{
+    margin-top: 60px;
+    
+    }
+    .container1{
+      max-width: 1400px;
+      margin: auto;
+      
+    }
+    .Icon span{
+      background: #A8A6A6;
+      padding: 20px;
+      border-radius: 120px;
+    }
+    
+    .Icon{
+     margin-top: 20px;
+     margin-bottom:40px; 
+     color: #FFF;
+     font-size: 50px;
+     text-align: center;
+    }
+    input{
+      width: 80%;
+      height: 40px;
+    }
+    
+    .botons{
+      border-radius: 20px;
+      width: 250px;
+      margin: 0;
+      line-height: inherit;
+      font-size:20px;
+      margin-top:70px; 
+      background-color:#ffffff;   
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+    }
+    
+    h4{
+      margin-bottom: 50px;
+    }
+    footer{
+      width: 100%;
+      height: 94px;
+      background-color: rgb(0, 0, 0);
+      color: white;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    
+     input{
+      width: 200px;
+      height: 35px;
+    }
+    
+    .registrar{
+      border-top: 10px white solid;
+      width: 400px;
+      height: 700px;
+      background-color: #0C75F3;
+      border-radius: 20px;
+      padding-left: 20px;
+    }
+    
+    .registrar .boton a{
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    }
+    .ingreso .boton a{
+      display: flex;
+      color: black;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      text-decoration: none;
+      }
+    
+      .salida .boton a{
+        display: flex;
+        color: black;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        text-decoration: none;
+        }
+    .salida{
+      width: 400px;
+      height: 450px;
+      background-color: #0C75F3;
+      border-radius: 20px;
+      padding-left: 20px;
+      border-top: 10px rgb(255, 255, 255) solid;
+    }
+    .salida h1{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .ingreso{
+      width: 400px;
+      height: 500px;
+      background-color: #0C75F3;
+      border-radius: 20px;
+      padding-left: 20px;
+      border-top: 10px rgb(255, 255, 255) solid;
+    }
+    .ingreso h1{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .registrar h1{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .funcionalidades{
+      display: flex;
+      height:89.7vh;
+      width: 100%;
+      align-items: center;
+      background-color:rgb(141, 141, 141);
+      justify-content: space-around;
+    }
+    .funcionalidades-generales{
+      background-color: black;
+      display: flex;
+      justify-content: space-around;
+      width: 1000px;
+      height: 570px;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    .container-login{
+      background-color:rgb(0, 0, 0);
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      color: white;
+     
+    }
+    .container-login .boton2{
+      display: flex;
+      width: 60%;
+      border-radius:10px;
+      justify-content: center;
+      margin: 30px 0 0 0px;
+      text-align: center;
+      padding: 10px;
+      background-color: rgb(255, 255, 255);
+      
+    }
+    .container-login h4{
+      font-size: 30px;
+    }
+
+    .enlaces a{
+      color: #0C75F3;
+    }
+    .enlace-login {
+      width: 60px;
+      margin-top: 20px;
+      border-radius: 40px 40px 40px 40px;
+      background-color: rgb(255, 254, 254);
+    }
+    .enlace-login a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      color: #0C75F3;
+    }
+
+    .formulario{
+      width: 400px;
+      height: 450px;
+      background:linear-gradient(160deg,rgb(0, 0, 0),#0073ff);
+      border-top:  10px solid rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 20px;
+
+    }
+
+    .container-contraseña{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      background:linear-gradient(160deg,rgb(0, 0, 0),#0073ff);
+    }
+.btn-2{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width:100px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  border-radius: 10px;
+ 
+}
+
+.container-registro{
+  width: 40%;
+  height: 40vh;
+  background-color: rgb(255, 255, 255);
+}
+.info-registro{
+width: 100%;
+color: #0073ff;
+height: 50px;
+background-color: black;
+}
+
+.registro-principal{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: black;
+}
+
+
+
+
+ .info{
+  color:red;
+  
+ }
+
+ .datos{
+  width: 100%;
+  display: flex;
+  height: 10vh;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .titu{
+  display: flex;
+ }
+
+ .caja{
+ 
+  width: 130px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1px;
+  border-bottom: 5px white solid ;
+  border-left: 5px white solid;
+  border-right:3px white solid;
+  border-top:5px white solid;
+ }
+
+ .texto {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #0073ff;
+ }
+
+ .texto p{
+  color: rgb(255, 255, 255);
+ }
+
+ 
+ .titulo{
+  color:#0073ff;
+  height: 80px;
+  width: 70px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ }
