@@ -388,7 +388,55 @@ app.post("/registrarproducto",(req,res)=>{
 
 
 })
+app.post("/ingreso",(req,res)=>{
+  let codigoingreso = req.body.codigoingreso;
+  let codigoproducto=req.body.codigoproducto;
+  let horaingreso=req.body. horaingreso;
+  let fechaingreso=req.body.fechaingreso;
+  let cantidad=req.body.cantidad;
+  console.log(req.body);
+ 
+  db.run(`INSERT INTO ingreso(codigoingreso,codigoproducto,horaingreso,fechaingreso,cantidad) VALUES (?, ?, ?, ?, ?)`,
+  [codigoingreso,codigoproducto,horaingreso,fechaingreso,cantidad],
+   (error)=>{
+    if (!error) {
+      console.log("insert ok");
+      res.render(`registro-exitoso`)
+      
+    }else{
+      
+      console.log("no se pudo insertar", error);
+    }
 
+  })
+
+
+})
+
+app.post("/salida",(req,res)=>{
+  let codigosalida = req.body.codigosalida;
+  let codigoproducto=req.body.codigoproducto;
+  let horasalida=req.body. horasalida;
+  let fechasalida=req.body.fechasalida;
+  let cantidad=req.body.cantidad;
+  console.log(req.body);
+ 
+  db.run(`INSERT INTO salida(codigosalida,codigoproducto,horasalida,fechasalida,cantidad) VALUES (?, ?, ?, ?, ?)`,
+  [codigosalida,codigoproducto,horasalida,fechasalida,cantidad],
+   (error)=>{
+    if (!error) {
+      console.log("insert ok");
+      res.render(`registro-exitoso`)
+      
+    }else{
+      
+      console.log("no se pudo insertar", error);
+    }
+
+  })
+
+
+})
 
 
 app.listen(port, () => {

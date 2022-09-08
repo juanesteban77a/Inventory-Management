@@ -21,6 +21,7 @@
         <div class="barra">
           <div class="enlaces">
             <a href="/">Inicio</a>
+            <a href="/registro">Productos</a>
           
           </div>
       
@@ -51,87 +52,48 @@
         <p>Cantidad</p>
         <input type="text" name="cantidad">
         <div class="boton">
-        <button class="btn-2">Registrar<button>
+        <button class="btn-2">Registrar
       </div>
       </div>
-      
-       </div>
       </form>
+       </div>
+       <form action="/ingreso" method="post">
        <div class="funcionalidades-generales">
       <div class="ingreso">
         <h1>Ingreso de productos</h1>
          <p>Codigo de ingreso</p>
-        <select type="text">
-      <option value="">1</option>
-      <option value="">2</option>
-      <option value="">3</option>
-      <option value="">4</option>
-      <option value="">5</option>
-      <option value="">6</option>
-      <option value="">7</option>
-      <option value="">8</option>
-      <option value="">9</option>
-      <option value="">10</option>
-      
-        </select>
+        <input type="text" name="codigoingreso">
         <p>Codigo de producto</p>
-        <select type="text">
-      <option value="">1</option>
-      <option value="">2</option>
-      <option value="">3</option>
-      <option value="">4</option>
-      <option value="">5</option>
-      <option value="">6</option>
-      <option value="">7</option>
-      <option value="">8</option>
-      <option value="">9</option>
-      <option value="">10</option>
-      
-        </select>
+        <input  type="text" name="codigoproducto">
+        <p>Hora de ingreso</p>
+        <input  type="text" name="horaingreso">
         <p>Fecha de ingreso</p>
-        <input type="date">
+        <input type="text" name="fechaingreso">
         <p>Cantidad de producto</p>
-        <input type="text">
-        <button class="btn-2">ingresar producto<button>
-      
+        <input type="text" name="cantidad">
+        <button class="btn-2">Ingresar producto
+
       </div>
-        
+        </form>
+        <form action="/salida" method="post">
       <div class="salida">
         <h1>Salida Producto</h1>
          <p>Codigo de salida</p>
-        <select type="text">
-      <option value="">1</option>
-      <option value="">2</option>
-      <option value="">3</option>
-      <option value="">4</option>
-      <option value="">5</option>
-      <option value="">6</option>
-      <option value="">7</option>
-      <option value="">8</option>
-      <option value="">9</option>
-      <option value="">10</option>
-        </select>
+        <input type="text" name="codigosalida">
         <p>Codigo de producto</p>
-       <select type="text">
-      <option value="">1</option>
-      <option value="">2</option>
-      <option value="">3</option>
-      <option value="">4</option>
-      <option value="">5</option>
-      <option value="">6</option>
-      <option value="">7</option>
-      <option value="">8</option>
-      <option value="">9</option>
-      <option value="">10</option>
-       </select>
+       <input type="text" name="codigoproducto">
+       <p>Hora de salida</p>
+       <input type="text" name="horasalida">
        <p>Fecha de salida</p>
-       <input type="date">
+       <input type="text" name="fechasalida">
         <p>Cantidad de salida</p>
-        <input type="text" >
-        <button class="btn-2">siguiente<button>
+        <input type="text" name="cantidad">
+        <button class="btn-2">Siguiente
         
        </div>
-      </div>
+      </form>
+      </div>  
+    
        </div>
       
 

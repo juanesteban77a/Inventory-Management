@@ -236,7 +236,7 @@
         }
     .salida{
       width: 400px;
-      height: 450px;
+      height: 530px;
       background-color: #0C75F3;
       border-radius: 20px;
       padding-left: 20px;
@@ -248,7 +248,7 @@
     }
     .ingreso{
       width: 400px;
-      height: 500px;
+      height: 570px;
       background-color: #0C75F3;
       border-radius: 20px;
       padding-left: 20px;
@@ -276,7 +276,7 @@
       display: flex;
       justify-content: space-around;
       width: 1000px;
-      height: 570px;
+      height: 700px;
       align-items: center;
       border-radius: 10px;
     }
@@ -360,7 +360,7 @@
 }
 
 .container-registro{
-  width: 40%;
+  width: 47%;
   height: 40vh;
   
 }
@@ -436,3 +436,4 @@ background-color: black;
   align-items: center;
 
  }
+
