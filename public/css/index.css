@@ -302,8 +302,9 @@
       background-color: rgb(255, 255, 255);
       
     }
+    
     .container-login h4{
-      font-size: 30px;
+      font-size: 40px;
     }
 
     .enlaces a{
@@ -436,4 +437,5 @@ background-color: black;
   align-items: center;
 
  }
+
 

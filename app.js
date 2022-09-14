@@ -12,8 +12,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 const nodemailer=require('nodemailer');
 const cookieParse = require("cookie-parser")
 const sessions  = require("express-session");
-
-
+const { render } = require('ejs');
 
 
 
@@ -183,6 +182,22 @@ app.get('/mensaje', (req, res) => {
 app.get('/administrador', (req, res) => {
   res.render('administrador');
 })
+
+app.get('/ingreso', (req, res) => {
+  db.all("select * from ingreso",
+     
+  (error,rows)=>{ 
+    if (!error) {
+      res.render('ingreso',{data:rows});
+      
+    }else{
+      res.send("inicie sesion")
+
+    }
+  })
+res.render('ingreso')
+})
+
 app.get('/contraseña', (req, res) => {
   res.render('contraseña');
 })
@@ -272,6 +287,7 @@ app.post('/registro_admin',(req, res) => {
       })
       
     })
+   
     
     app.get('/reservar/:idarticulo', (req, res) => {
       session = req.session;
@@ -364,6 +380,22 @@ app.get("/biblioteca",(req,res)=>{
   }
 
 })
+app.get('/registro', (req, res) => {
+      
+     
+  db.all("select * from registroproductos",
+ 
+  (error,rows)=>{ 
+    console.log(rows);
+    if (!error) {
+      res.render('registro',{data: rows});
+      
+    }else{
+      res.send("inicie sesion")
+    }
+  })
+  
+})
 app.post("/registrarproducto",(req,res)=>{
   let id = req.body.id;
   let categoria=req.body.categoria;
@@ -388,6 +420,39 @@ app.post("/registrarproducto",(req,res)=>{
 
 
 })
+app.get('/registro', (req, res) => {
+      
+     
+  db.all("select * from registroproductos",
+ 
+  (error,rows)=>{ 
+    console.log(rows);
+    if (!error) {
+      res.render('registro',{data: rows});
+      
+    }else{
+      res.send("inicie sesion")
+    }
+  })
+  
+})
+app.get('/ingreso', (req, res) => {
+  db.all("select * from ingreso",
+     
+  (error,rows)=>{ 
+    console.log(rows);
+    if (!error) {
+      res.render('ingreso',{data: rows});
+      
+    }else{
+      res.send("inicie sesion")
+
+    }
+  })
+
+})
+
+
 app.post("/ingreso",(req,res)=>{
   let codigoingreso = req.body.codigoingreso;
   let codigoproducto=req.body.codigoproducto;
@@ -398,10 +463,10 @@ app.post("/ingreso",(req,res)=>{
  
   db.run(`INSERT INTO ingreso(codigoingreso,codigoproducto,horaingreso,fechaingreso,cantidad) VALUES (?, ?, ?, ?, ?)`,
   [codigoingreso,codigoproducto,horaingreso,fechaingreso,cantidad],
-   (error)=>{
+   (error,rows)=>{
     if (!error) {
       console.log("insert ok");
-      res.render(`registro-exitoso`)
+      res.render(`ingreso`,{data:rows})
       
     }else{
       
