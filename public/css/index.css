@@ -10,6 +10,19 @@
       background-color: black;
   
     }
+    .nav-barra-regis { 
+      height: 100px;
+      width: 100%;
+      background-color:black;
+  
+    }
+.registro-principal-registro2{
+  width: 100%;
+  height: 500vh;
+  display: flex;
+  background-color: grey;
+  
+}
     .enlace a{
       display: flex;
       justify-content: end;
@@ -55,7 +68,7 @@
       text-align: center;
       flex-direction: column;
       height: 80vh;
-      background:linear-gradient( black,blue);
+      background-color: black;
     
      
     }
@@ -173,7 +186,7 @@
     footer{
       width: 100%;
       height: 94px;
-      background:blue;
+      background:black;
       color: white;
       font-size: 20px;
       display: flex;
@@ -191,6 +204,14 @@
       border-top: 10px white solid;
       width: 400px;
       height: 700px;
+      background-color: #0C75F3;
+      border-radius: 20px;
+      padding-left: 20px;
+    }
+    .update{
+      border-top: 10px white solid;
+      width: 400px;
+      height: 610px;
       background-color: #0C75F3;
       border-radius: 20px;
       padding-left: 20px;
@@ -247,7 +268,7 @@
     }
     .ingreso{
       width: 400px;
-      height: 600px;
+      height: 640px;
       background-color: #0C75F3;
       border-radius: 20px;
       padding-left: 20px;
@@ -360,10 +381,11 @@
 }
 
 .container-registro{
-  width: 50%;
+  width: 100%;
   height: 60vh;
-  
+  background-color: grey;
 }
+
 .info-registro{
 width: 100%;
 color: #0073ff;
@@ -374,6 +396,14 @@ background-color: black;
 .registro-principal{
   width: 100%;
   height: 100vh;
+  display: flex;
+  background-color:black;
+  
+}
+
+.registro-principal-registro{
+  width: 100%;
+  height: 500vh;
   display: flex;
   background-color:black;
   
@@ -438,17 +468,4 @@ background-color: black;
 
  }
 
- .registro{
-  width: 100%;
-  height: 40vh;
-  display: flex;
-  flex-direction: column;
-  background-color: red;
- }
-
- .todo{
-  height: 200px;
-  background-color: red;
-  width: 100%;
- }
-
+ 

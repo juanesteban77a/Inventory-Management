@@ -14,7 +14,7 @@
   <div class="registro">
   
     <div class="registro-product">
-    <nav class="nav-barra">
+    <nav class="nav-barra-regis">
         <div class="img">
           <img src="/img/logo.png"    height="100px" width="300px">
         </div>
@@ -30,72 +30,27 @@
 
         <h1>Registro reciente de productos:</h1>
       </div>
-       <div class="registro-principal">
+       <div class="registro-principal-registro2">
 
        
       <div class="container-registro">
         <% if(data){ %>
 
           <% data.forEach((producto)=> { %>
-        <div class="datos">
-
-          <div class="titulo">
-            Nombre: <%= producto.nombreregis %>
-          </div>
-
-          <div class="titu">
-          
-<div class="caja">
-  <div class="texto">
-  Id:<p><%= producto.idregis %> </p>  
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-    
- nombre: <p> <%= producto.nombreregis %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-  Fecha de vencimiento:<p><%= producto.fechaven %> </p>  
-</div>
-</div>
-<div class="caja">
-  <div class="texto"> 
- Categoria:<p> <%= producto.categoriaregis %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-     
-   Envalaje:<p><%= producto.envalajeregis %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-    
- Cantidad: <p> <%= producto.cantidadregis %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-    
-  Descripcion:<p><%= producto.descripcion %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-    
-  <a href="/editProduct/<%=producto.idregis %>">editar</a>
-</div>
-</div>
-
-          </div>
-
-      
-        </div>
-       
+            <div class="card" style="background-color: grey;">
+              <div class="card-body" style="width:35% ; background-color: grey;"> 
+                <h5 class="card-title">Id: <%= producto.idregis %></h5>
+                <h5 class="card-title">Nombre: <%= producto.nombreregis %></h5>
+                <h5 class="card-title">Fecha de vencimiento:<%= producto.fechaven %></h5>
+                <h5 class="card-title">Categoria:<%= producto.categoriaregis %></h5>
+                <h5 class="card-title">Envalaje:<%= producto.envalajeregis %></h5>
+                <h5 class="card-title">Cantidad:<%= producto.cantidadregis %></h5>
+                <h5 class="card-title">Descripcion:<%= producto.descripcion %></h5>
+                <a href="/editProduct/<%=producto.idregis %>" class="btn btn-primary">Editar</a>
+              </div>
+            </div>
+            
+            
         <% }) %>
         <% }else { %>
           <h1>No hay datos</h1>

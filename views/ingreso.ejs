@@ -26,57 +26,36 @@
 
         <h1>Ingreso reciente de productos:</h1>
       </div>
-       <div class="registro-principal">
+      <div class="registro-principal-registro2">
 
        
-      <div class="container-registro">
-        <% if(data){ %>
-
-          <% data.forEach((producto)=> { %>
-        <div class="datos">
-
-         
-
-          <div class="titu">
-          
-<div class="caja">
-  <div class="texto">
-  Id:<p><%= producto.codigoproducto %> </p>  
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-  Hora ingreso:<p><%= producto.horaingreso %> </p>  
-</div>
-</div>
-<div class="caja">
-  <div class="texto"> 
- Fecha de ingreso:<p> <%= producto.fechaingreso %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-     
-   Envalaje:<p><%= producto.envalajeingreso %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
+        <div class="container-registro">
+          <% if(data){ %>
     
- Cantidad: <p> <%= producto.cantidadingreso %></p>
-</div>
-</div>
-
-          </div>
-
-      
-        </div>
+            <% data.forEach((producto)=> { %>
+              <div class="card" style="background-color: grey;">
+                <div class="card-body" style="width:35% ; background-color: grey;"> 
+                  <h5 class="card-title">Id-ingreso: <%= producto.codigoingreso%></h5>
+                  <h5 class="card-title">Id-producto: <%= producto.codigoproducto%></h5>
+                  <h5 class="card-title">Nombre: <%= producto.nombreingreso %></h5>
+                  <h5 class="card-title">Fecha ingreso:<%= producto.fechaingreso %></h5>
+                  <h5 class="card-title">Hora-ingreso:<%= producto.horaingreso %></h5>
+                  <h5 class="card-title">Cantidad:<%= producto.cantidadingreso%></h5>
+                  <h5 class="card-title">Envalaje:<%= producto.envalajeingreso%></h5>
+                 
+                
+                </div>
+              </div>
+              
+              
+         
+          <% }) %>
+          <% }else { %>
+            <h1>No hay datos</h1>
+    
+           <%} %>
+    
        
-        <% }) %>
-        <% }else { %>
-          <h1>No hay datos</h1>
-
-         <%} %>
 
         
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

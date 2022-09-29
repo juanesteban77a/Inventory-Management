@@ -465,6 +465,8 @@ app.post("/update/:id", (req, res) => {
     }
   );
 });
+
+
 app.get('/registro', (req, res) => {
       
      
@@ -481,6 +483,7 @@ app.get('/registro', (req, res) => {
   })
   
 })
+
 app.get('/salida', (req, res) => {
   db.all("select * from salida",
      
@@ -535,6 +538,7 @@ app.get('/registro', (req, res) => {
 
 
 app.post("/ingreso",(req,res)=>{
+  let nombreingreso=req.body.nombreingreso;
   let codigoproducto=req.body.codigoproducto;
   let horaingreso=req.body. horaingreso;
   let fechaingreso=req.body.fechaingreso;
@@ -543,8 +547,8 @@ app.post("/ingreso",(req,res)=>{
   console.log(req.body);
   
  
-  db.run(`INSERT INTO ingreso(envalajeingreso,codigoproducto,horaingreso,fechaingreso,cantidadingreso) VALUES (?, ?, ?, ?, ?)`,
-  [envalajeingreso,codigoproducto,horaingreso,fechaingreso,cantidadingreso],
+  db.run(`INSERT INTO ingreso(nombreingreso,envalajeingreso,codigoproducto,horaingreso,fechaingreso,cantidadingreso) VALUES (?, ?, ?, ?, ?,?)`,
+  [nombreingreso,envalajeingreso,codigoproducto,horaingreso,fechaingreso,cantidadingreso],
    (error,rows)=>{
     if (!error) {
       

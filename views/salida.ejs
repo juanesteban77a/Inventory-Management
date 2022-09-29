@@ -27,69 +27,41 @@
 
         <h1>Salida reciente de productos:</h1>
       </div>
-       <div class="registro-principal">
-
-       
-      <div class="container-registro">
-        <% if(data){ %>
-
-          <% data.forEach((producto)=> { %>
-        <div class="datos">
-
-          <div class="titulo">
-            Nombre: <%= producto.nombresalida %>
-          </div>
-
-          <div class="titu">
-          
-<div class="caja">
-  <div class="texto">
-  Id:<p><%= producto.codigosalida %> </p>  
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-  Fecha de vencimiento:<p><%= producto.codigosalida %> </p>  
-</div>
-</div>
-<div class="caja">
-  <div class="texto"> 
- Categoria:<p> <%= producto.horasalida %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-     
-   Envalaje:<p><%= producto.fechasalida %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
+       <div class="registro-principal-registro2">
+        <div class="container-registro">
+          <% if(data){ %>
     
- Cantidad: <p> <%= producto.cantidad %></p>
-</div>
-</div>
-
-          </div>
-
-      
-        </div>
-       
-        <% }) %>
-        <% }else { %>
-          <h1>No hay datos</h1>
-
-         <%} %>
-
-        
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+            <% data.forEach((producto)=> { %>
+              <div class="card" style="background-color: grey;">
+                <div class="card-body" style="width:35% ; background-color: grey;"> 
+                  <h5 class="card-title">Id-salida: <%= producto.codigosalida %></h5>
+                  <h5 class="card-title">Id-producto: <%= producto.codigoproducto%></h5>
+                  <h5 class="card-title">Nombre: <%= producto.nombresalida %></h5>
+                  <h5 class="card-title">Fecha salida:<%= producto.fechasalida %></h5>
+                  <h5 class="card-title">Hora-salida:<%= producto.horasalida %></h5>
+                  <h5 class="card-title">Cantidad:<%= producto.cantidad %></h5>
+                  
+                
+                </div>
+                 
               </div>
-              
+              <% }) %>
+          <% }else { %>
+            <h1>No hay datos</h1>
+    
+           <%} %>
             </div>
+          </div>
+          
+         
+    
+
+       
+      
 
               
-      <footer>Inventārs, Copyright &#169; 2022</footer>
-      
+    
+        <footer>Inventārs, Copyright &#169; 2022</footer>
       
 </body>
 
