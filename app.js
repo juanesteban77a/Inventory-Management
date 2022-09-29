@@ -161,6 +161,11 @@ app.get('/reserva_libro',  (req, res) => {
   res.render('rion.userid = email;eserva_libro');
 })
 
+app.get('/registroprincipal',  (req, res) => {
+
+  res.render('registroprincipal');
+})
+
 app.get('/login',(req, res)  => {
     res.render('login');
 })
@@ -183,20 +188,7 @@ app.get('/administrador', (req, res) => {
   res.render('administrador');
 })
 
-app.get('/ingreso', (req, res) => {
-  db.all("select * from ingreso",
-     
-  (error,rows)=>{ 
-    if (!error) {
-      res.render('ingreso',{data:rows});
-      
-    }else{
-      res.send("inicie sesion")
 
-    }
-  })
-res.render('ingreso')
-})
 
 app.get('/contraseña', (req, res) => {
   res.render('contraseña');
@@ -380,32 +372,18 @@ app.get("/biblioteca",(req,res)=>{
   }
 
 })
-app.get('/registro', (req, res) => {
-      
-     
-  db.all("select * from registroproductos",
- 
-  (error,rows)=>{ 
-    console.log(rows);
-    if (!error) {
-      res.render('registro',{data: rows});
-      
-    }else{
-      res.send("inicie sesion")
-    }
-  })
-  
-})
+
+
 app.post("/registrarproducto",(req,res)=>{
-  let id = req.body.id;
-  let categoria=req.body.categoria;
-  let nombre=req.body.nombre;
+  let idregis = req.body.idregis;
+  let categoriaregis=req.body.categoriaregis;
+  let nombreregis=req.body.nombreregis;
   let descripcion=req.body.descripcion;
   let fechaven=req.body.fechaven;
-  let envalaje=req.body.envalaje;
-  let cantidad=req.body.cantidad;
-  db.run(`INSERT INTO registroproductos(id,categoria,nombre,descripcion,fechaven,envalaje,cantidad) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-  [id,categoria,nombre,descripcion,fechaven,envalaje,cantidad],
+  let envalajeregis=req.body.envalajeregis;
+  let cantidadregis=req.body.cantidadregis;
+  db.run(`INSERT INTO registroproductos(idregis,categoriaregis,nombreregis,descripcion,fechaven,envalajeregis,cantidadregis) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+  [idregis,categoriaregis,nombreregis,descripcion,fechaven,envalajeregis,cantidadregis],
    (error)=>{
     if (!error) {
       console.log("insert ok");
@@ -420,6 +398,73 @@ app.post("/registrarproducto",(req,res)=>{
 
 
 })
+
+app.get("/deletecategoria/:id", (req, res) => {
+  db.run(
+    "DELETE FROM categoria WHERE id_categoria = ?",
+    [req.params.id],
+    (error, rows) => {
+      if (!error) {
+        res.send(
+          "<script>alert('Categoria eliminada exitosamente'); window.location = '/categoria'</script>"
+        );
+        console.log(error);
+      } else {
+        return res.send(
+          "<script>alert('La categoria no se elimino vuelva a intentarlo'); window.location = '/categoria'</script>"
+        );
+      }
+    }
+  );
+});
+app.get("/editProduct/:id", (req, res) => {
+  const { id } = req.params;
+  db.get("SELECT * FROM registroproductos WHERE idregis = ?", [id], (error, rows) => {
+    if (!error) {
+      res.render("edidProduct", { data: rows });
+    } else {
+      return res.send(
+        error
+      );
+    }
+  });
+});
+
+app.post("/update/:id", (req, res) => {
+  const actualizar = req.body;
+  const { id } = req.params;
+  console.log(req.body);
+  const idNumber = parseInt(id);
+  console.log(idNumber);
+  db.run(
+    `UPDATE registroproductos SET  categoriaregis = ?,  nombreregis = ?,  descripcion = ?, fechaven = ?,
+    envalajeregis = ?,  cantidadregis = ?  WHERE idregis = ?`,
+  
+    [
+      req.body.categoriaregis,
+      req.body.nombreregis,
+      req.body.descripcion,
+      req.body.fechaven,
+      req.body.envalajeregis,
+      req.body.cantidadregis,
+      idNumber
+    ],
+    (error, rows) => {
+      if (!error) {
+       return res.send(
+          "<script>alert('Producto actualizado exitosamente'); window.location = '/registro'</script>"
+          
+        );
+      } else {
+        console.log(error);
+        return res.send(
+        "<script>alert('El producto no se actualizo'); window.location = '/registro'</script>"
+          
+        );
+      }
+    }
+  );
+});
 app.get('/registro', (req, res) => {
       
      
@@ -436,13 +481,30 @@ app.get('/registro', (req, res) => {
   })
   
 })
+app.get('/salida', (req, res) => {
+  db.all("select * from salida",
+     
+  (error,rows)=>{ 
+    console.log(rows);
+    if (!error) {
+      res.render('salida',{data: rows});
+      
+    }else{
+      res.send("inicie sesion")
+
+    }
+  })
+
+})
 app.get('/ingreso', (req, res) => {
   db.all("select * from ingreso",
      
   (error,rows)=>{ 
     console.log(rows);
     if (!error) {
+      
       res.render('ingreso',{data: rows});
+      console.log("rrrrrrrrr",rows);
       
     }else{
       res.send("inicie sesion")
@@ -452,21 +514,41 @@ app.get('/ingreso', (req, res) => {
 
 })
 
+app.get('/registro', (req, res) => {
+      
+     
+  db.all("select * from registroproductos",
+ 
+  (error,rows)=>{ 
+    console.log(rows);
+    if (!error) {
+      res.render('registro',{data: rows});
+      
+    }else{
+      res.send("inicie sesion")
+    }
+  })
+  
+})
+
+
+
 
 app.post("/ingreso",(req,res)=>{
-  let codigoingreso = req.body.codigoingreso;
   let codigoproducto=req.body.codigoproducto;
   let horaingreso=req.body. horaingreso;
   let fechaingreso=req.body.fechaingreso;
-  let cantidad=req.body.cantidad;
+  let cantidadingreso=req.body.cantidadingreso;
+  let envalajeingreso=req.body.envalajeingreso;
   console.log(req.body);
+  
  
-  db.run(`INSERT INTO ingreso(codigoingreso,codigoproducto,horaingreso,fechaingreso,cantidad) VALUES (?, ?, ?, ?, ?)`,
-  [codigoingreso,codigoproducto,horaingreso,fechaingreso,cantidad],
+  db.run(`INSERT INTO ingreso(envalajeingreso,codigoproducto,horaingreso,fechaingreso,cantidadingreso) VALUES (?, ?, ?, ?, ?)`,
+  [envalajeingreso,codigoproducto,horaingreso,fechaingreso,cantidadingreso],
    (error,rows)=>{
     if (!error) {
-      console.log("insert ok");
-      res.render(`ingreso`,{data:rows})
+      
+      res.render(`ingreso-exitoso`)
       
     }else{
       
@@ -484,14 +566,16 @@ app.post("/salida",(req,res)=>{
   let horasalida=req.body. horasalida;
   let fechasalida=req.body.fechasalida;
   let cantidad=req.body.cantidad;
+  let nombresalida=req.body.nombresalida;
   console.log(req.body);
  
-  db.run(`INSERT INTO salida(codigosalida,codigoproducto,horasalida,fechasalida,cantidad) VALUES (?, ?, ?, ?, ?)`,
-  [codigosalida,codigoproducto,horasalida,fechasalida,cantidad],
+  db.run(`INSERT INTO salida(nombresalida,codigosalida,codigoproducto,horasalida,fechasalida,cantidad) VALUES (?, ?, ?, ?, ?,?)`,
+  [nombresalida,codigosalida,codigoproducto,horasalida,fechasalida,cantidad],
    (error)=>{
     if (!error) {
       console.log("insert ok");
-      res.render(`registro-exitoso`)
+      res.render(`salida-exitosa`)
+      
       
     }else{
       

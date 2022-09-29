@@ -11,9 +11,7 @@
     <link rel="shortcut icon" href="media/icon.png" type="image/x-icon">
 </head>
 <body>
-  <div class="registro">
-  
-    <div class="registro-product">
+  <body>
     <nav class="nav-barra">
         <div class="img">
           <img src="/img/logo.png"    height="100px" width="300px">
@@ -22,13 +20,12 @@
   <a href="/registrarproducto">Atras</a>
       </div>
        
-       
-
+       </div>
        </nav>
 
        <div class="info-registro">
 
-        <h1>Registro reciente de productos:</h1>
+        <h1>Salida reciente de productos:</h1>
       </div>
        <div class="registro-principal">
 
@@ -40,54 +37,36 @@
         <div class="datos">
 
           <div class="titulo">
-            Nombre: <%= producto.nombreregis %>
+            Nombre: <%= producto.nombresalida %>
           </div>
 
           <div class="titu">
           
 <div class="caja">
   <div class="texto">
-  Id:<p><%= producto.idregis %> </p>  
+  Id:<p><%= producto.codigosalida %> </p>  
 </div>
 </div>
 <div class="caja">
   <div class="texto">
-    
- nombre: <p> <%= producto.nombreregis %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-  Fecha de vencimiento:<p><%= producto.fechaven %> </p>  
+  Fecha de vencimiento:<p><%= producto.codigosalida %> </p>  
 </div>
 </div>
 <div class="caja">
   <div class="texto"> 
- Categoria:<p> <%= producto.categoriaregis %></p>
+ Categoria:<p> <%= producto.horasalida %></p>
 </div>
 </div>
 <div class="caja">
   <div class="texto">
      
-   Envalaje:<p><%= producto.envalajeregis %></p>
+   Envalaje:<p><%= producto.fechasalida %></p>
 </div>
 </div>
 <div class="caja">
   <div class="texto">
     
- Cantidad: <p> <%= producto.cantidadregis %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-    
-  Descripcion:<p><%= producto.descripcion %></p>
-</div>
-</div>
-<div class="caja">
-  <div class="texto">
-    
-  <a href="/editProduct/<%=producto.idregis %>">editar</a>
+ Cantidad: <p> <%= producto.cantidad %></p>
 </div>
 </div>
 
@@ -107,16 +86,9 @@
               </div>
               
             </div>
-</div>
 
-</div>
-   
-    
-</div> 
-  
-</div>
-
-    
+              
+      <footer>Inventārs, Copyright &#169; 2022</footer>
       
       
 </body>

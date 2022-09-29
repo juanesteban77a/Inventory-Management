@@ -55,15 +55,9 @@
       text-align: center;
       flex-direction: column;
       height: 80vh;
-      background-image: linear-gradient(
-          0deg,
-          rgba(0,0,0,0.5),
-          rgba(0,0,0,0.5)
-      )
-      ,url("/img/portada.png");
+      background:linear-gradient( black,blue);
+    
      
-      background-repeat: no-repeat;
-      background-size: cover;
     }
     
     .botones{
@@ -73,8 +67,13 @@
       align-items: center;
       justify-content: center;
       margin-left: 700px;
-    
-      
+    }
+    .controls{
+      width: 300px;
+      height: 40px;
+      border-radius: 10px;
+      border-bottom: 200px;
+      margin-top: 10px;
     }
     
     .botones a{
@@ -162,7 +161,7 @@
       margin: 0;
       line-height: inherit;
       font-size:20px;
-      margin-top:70px; 
+      margin-top:50px; 
       background-color:#ffffff;   
       color: rgb(0, 0, 0);
       cursor: pointer;
@@ -174,7 +173,7 @@
     footer{
       width: 100%;
       height: 94px;
-      background-color: rgb(0, 0, 0);
+      background:blue;
       color: white;
       font-size: 20px;
       display: flex;
@@ -236,7 +235,7 @@
         }
     .salida{
       width: 400px;
-      height: 530px;
+      height: 600px;
       background-color: #0C75F3;
       border-radius: 20px;
       padding-left: 20px;
@@ -248,7 +247,7 @@
     }
     .ingreso{
       width: 400px;
-      height: 570px;
+      height: 600px;
       background-color: #0C75F3;
       border-radius: 20px;
       padding-left: 20px;
@@ -276,7 +275,7 @@
       display: flex;
       justify-content: space-around;
       width: 1000px;
-      height: 700px;
+      height: 800px;
       align-items: center;
       border-radius: 10px;
     }
@@ -361,8 +360,8 @@
 }
 
 .container-registro{
-  width: 47%;
-  height: 40vh;
+  width: 50%;
+  height: 60vh;
   
 }
 .info-registro{
@@ -376,7 +375,8 @@ background-color: black;
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: black;
+  background-color:black;
+  
 }
 
 
@@ -438,4 +438,17 @@ background-color: black;
 
  }
 
+ .registro{
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+ }
+
+ .todo{
+  height: 200px;
+  background-color: red;
+  width: 100%;
+ }
 

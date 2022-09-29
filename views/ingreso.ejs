@@ -16,7 +16,7 @@
           <img src="/img/logo.png"    height="100px" width="300px">
         </div>
 <div class="enlace">
-  <a href="/registrarproducto">Registrar producto</a>
+  <a href="/registrarproducto">Atras</a>
       </div>
        
        </div>
@@ -35,9 +35,7 @@
           <% data.forEach((producto)=> { %>
         <div class="datos">
 
-          <div class="titulo">
-            <%= producto.codigoingreso %>:
-          </div>
+         
 
           <div class="titu">
           
@@ -48,32 +46,27 @@
 </div>
 <div class="caja">
   <div class="texto">
-  Fecha de vencimiento:<p><%= producto.horaingreso %> </p>  
+  Hora ingreso:<p><%= producto.horaingreso %> </p>  
 </div>
 </div>
 <div class="caja">
   <div class="texto"> 
- Categoria:<p> <%= producto.fechaingreso %></p>
+ Fecha de ingreso:<p> <%= producto.fechaingreso %></p>
 </div>
 </div>
 <div class="caja">
   <div class="texto">
      
-   Envalaje:<p><%= producto.Cantidad %></p>
+   Envalaje:<p><%= producto.envalajeingreso %></p>
 </div>
 </div>
 <div class="caja">
   <div class="texto">
     
- Cantidad: <p> <%= producto.cantidad %></p>
+ Cantidad: <p> <%= producto.cantidadingreso %></p>
 </div>
 </div>
-<div class="caja">
-  <div class="texto">
-    
-  Descripcion:<p><%= producto.descripcion %></p>
-</div>
-</div>
+
           </div>
 
       

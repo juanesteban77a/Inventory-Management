@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bibliotec</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/img">
+    <link rel="stylesheet" href="/sweet/sweetalert2.min.css">
+    <link rel="shortcut icon" href="media/icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+   
+</head>
+<body>
+    <nav class="nav-barra">
+        <div class="img">
+          <img src="img/logo.png"    height="100px" width="300px">
+        </div>
+        <div class="barra">
+          <div class="enlaces">
+           
+            <a href="/registro">Registros recientes</a>
+            <a href="/ingreso">Ingresos recientes</a>
+            <a href="/salida">Salidas recientes</a>
+            <a href="/" style="margin-left: 60px;"> Cerrar sesión</a>
+          </div>
+      
+       
+        </div>
+      
+       </div>
+       </nav>
+      
+      <div class="funcionalidades">
+        
+        <div class="registrar-producto">
+
+         
+      <form action="/update/<%= data.idregis %>" method="post">
+      <div class="registrar">
+        <h1>Registrar Producto</h1>
+        
+        <p>Categoria</p>
+        <input type="text" name="categoriaregis" required
+        
+        value="<%= data.categoriaregis%>">
+        <p>Nombre</p>
+        <input type="text" name="nombreregis" required value="<%= data.nombreregis%>">
+        <p>Descripcion</p>
+        <input type="text" name="descripcion" required value="<%= data.descripcion%>"/> <br>
+        <p>Fecha de vencimiento</p>
+        <input type="date" name="fechaven" required value="<%= data.fechaven%>" >
+        <p>Envalage</p>
+        <input type="text" name="envalajeregis" required value="<%= data.envalajeregis%>" >
+        <p>Cantidad</p>
+        <input type="text" name="cantidadregis" required value="<%= data.cantidadregis%>" >
+        <div class="boton">
+        <button class="btn-2">actualizar
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

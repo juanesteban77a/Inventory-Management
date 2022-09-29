@@ -20,9 +20,11 @@
         </div>
         <div class="barra">
           <div class="enlaces">
-            <a href="/">Inicio</a>
-            <a href="/registro">Productos</a>
-          
+           
+            <a href="/registro">Registros recientes</a>
+            <a href="/ingreso">Ingresos recientes</a>
+            <a href="/salida">Salidas recientes</a>
+            <a href="/" style="margin-left: 60px;"> Cerrar sesión</a>
           </div>
       
        
@@ -38,19 +40,19 @@
       <div class="registrar">
         <h1>Registrar Producto</h1>
          <p>Codigo producto</p>
-        <input type="text" name="id" required>
+        <input type="text" name="idregis" required>
         <p>Categoria</p>
-        <input type="text" name="categoria" required>
+        <input type="text" name="categoriaregis" required>
         <p>Nombre</p>
-        <input type="text" name="nombre" required>
+        <input type="text" name="nombreregis" required>
         <p>Descripcion</p>
         <textarea type="text" name="descripcion" requaride ></textarea> <br>
         <p>Fecha de vencimiento</p>
-        <input type="text" name="fechaven" required>
+        <input type="date" name="fechaven" required>
         <p>Envalage</p>
-        <input type="text" name="envalaje" required>
+        <input type="text" name="envalajeregis" required>
         <p>Cantidad</p>
-        <input type="text" name="cantidad" required>
+        <input type="text" name="cantidadregis" required>
         <div class="boton">
         <button class="btn-2">Registrar
       </div>
@@ -61,16 +63,16 @@
        <div class="funcionalidades-generales">
       <div class="ingreso">
         <h1>Ingreso de productos</h1>
-         <p>Codigo de ingreso</p>
-        <input type="text" name="codigoingreso" required>
         <p>Codigo de producto</p>
         <input  type="text" name="codigoproducto" required>
         <p>Hora de ingreso</p>
-        <input  type="text" name="horaingreso" required>
+        <input  type="time" name="horaingreso" required>
         <p>Fecha de ingreso</p>
-        <input type="text" name="fechaingreso" required>
+        <input type="date" name="fechaingreso" required>
+        <p>Envalaje</p>
+        <input type="text" name="envalajeingreso" required>
         <p>Cantidad de producto</p>
-        <input type="text" name="cantidad" required>
+        <input type="text" name="cantidadingreso" required>
         <button class="btn-2">Ingresar producto
  </form>
       </div>
@@ -78,14 +80,16 @@
         <form action="/salida" method="post">
       <div class="salida">
         <h1>Salida Producto</h1>
+        <p>Nombre de producto</p>
+        <input type="text" name="nombresalida" required>
          <p>Codigo de salida</p>
         <input type="text" name="codigosalida" required>
         <p>Codigo de producto</p>
        <input type="text" name="codigoproducto" required>
        <p>Hora de salida</p>
-       <input type="text" name="horasalida" required>
+       <input type="time" name="horasalida" required>
        <p>Fecha de salida</p>
-       <input type="text" name="fechasalida" required>
+       <input type="date" name="fechasalida" required>
         <p>Cantidad de salida</p>
         <input type="text" name="cantidad" required>
         <button class="btn-2">Siguiente
